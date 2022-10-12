@@ -19,7 +19,7 @@ const addManager = () => {
 
     teamArray.push(manager);
   })
-}
+};
 //adds employees
 const addEmployee = () => {
 
@@ -38,7 +38,7 @@ const addEmployee = () => {
     }
     return teamArray;
   })
-}
+};
 
 //writes html file
 const writeFile = data => {
