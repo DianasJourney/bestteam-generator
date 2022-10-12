@@ -7,7 +7,6 @@ const ManagerCard = function(manager) {
             <div class="cardTitle">
                 <h1>${name}</h1>
                 <h2>Manager</h2><span class='material-symbols-outlined'>account_circle</span>
-
             </div>
             <div class="bodyOfCard">
                 <p class="id">ID: ${id}</p>
@@ -17,7 +16,7 @@ const ManagerCard = function(manager) {
         </div>
     </section>
     `
-}
+};
 // engineer profile
 const EngineerCard = function(engineer) {
     const {name, id, email, github} = engineer;
@@ -27,7 +26,6 @@ const EngineerCard = function(engineer) {
             <div class="cardTitle">
                 <h1>${name}</h1>
                 <h2>Engineer</h2><span class='material-symbols-outlined'>diversity_1</span>
-
             </div>
             <div class="bodyOfCard">
                 <p class="id">ID: ${id}</p>
@@ -37,7 +35,7 @@ const EngineerCard = function(engineer) {
         </div>
     </section>
     `
-}
+};
 // intern profile
 const InternCard = function(intern) {
     const {name, id, email, school} = intern;
@@ -47,7 +45,6 @@ const InternCard = function(intern) {
             <div class="cardTitle">
                 <h1>${name}</h1>
                 <h2>Intern</h2><span class='material-symbols-outlined'>supervisor_account</span>
-
             </div>
             <div class="bodyOfCard">
                 <p class="id">ID: ${id}</p>
@@ -57,35 +54,29 @@ const InternCard = function(intern) {
     </div>
 </section>
     `
-}
+};
 
 displayTeamPage = data => {
-  const cardArray = []
-
+  const cardArray = [];
   for (let i = 0; i < data.length; i++) {
-    let team = data[i]
-    let role = team.getRole()
-
+    let team = data[i];
+    let role = team.getRole();
     if (role === 'Manager') {
-      const managerCard = ManagerCard(team)
-      cardArray.push(managerCard)
+      const managerCard = ManagerCard(team);
+      cardArray.push(managerCard);
     }
-
     else if (role === 'Engineer') {
-      const engineerCard = EngineerCard(team)
-      cardArray.push(engineerCard)
+      const engineerCard = EngineerCard(team);
+      cardArray.push(engineerCard);
     }
-
     else if (role === 'Intern') {
-      const internCard = InternCard(team)
-      cardArray.push(internCard)
+      const internCard = InternCard(team);
+      cardArray.push(internCard);
     }
   }
-
-  const teamCards = cardArray.join('')
-
-  return createTeamPage(teamCards)
-}
+  const teamCards = cardArray.join('');
+  return createTeamPage(teamCards);
+};
 // this creates the teampage with all the info passed in
 const createTeamPage = function(teamCards) {
   return `
@@ -115,11 +106,10 @@ const createTeamPage = function(teamCards) {
               </div>
           </section>
       </main>
-      
   </body>
   </html>
 `
-}
-//exports and displays the team page
-module.exports = displayTeamPage
+};
+
+module.exports = displayTeamPage;
 

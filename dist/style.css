@@ -9,6 +9,7 @@ body {
     background-size: cover;
 }
 
+/*editing bootstrapnav bar*/
 #nav {
     background-image: url(../assets/headergif.gif);
     color: rgb(255, 255, 255);
@@ -20,7 +21,7 @@ body {
 .navbar-brand {
     font-size: 40px;
 }
-
+/* title for the card*/
 .cardTitle {
     background-color: white;
     color: rgb(42, 42, 43);
@@ -30,7 +31,7 @@ body {
     box-shadow: 2px 2px 2px 2px black;
     
 }
-
+/* editing the body of the card*/
 .bodyOfCard {
     background-color: rgb(178, 210, 238);
     color: rgb(0, 0, 0);

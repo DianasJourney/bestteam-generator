@@ -22,11 +22,6 @@ const addManager = () => {
 }
 //adds employees
 const addEmployee = () => {
-  console.log(`
-    ----------------
-    Add employees!
-    ----------------
-    `)
 
   return inquirer.prompt(employeeChoices).then(employeeData => {
     let {
