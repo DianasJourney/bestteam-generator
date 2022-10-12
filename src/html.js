@@ -4,12 +4,12 @@ const ManagerCard = function(manager) {
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="cardTitle">
                 <h1>${name}</h1>
                 <h2>Manager</h2><span class='material-symbols-outlined'>account_circle</span>
 
             </div>
-            <div class="card-body">
+            <div class="bodyOfCard">
                 <p class="id">ID: ${id}</p>
                 <p class="email">Email: <a href="mailto:${email}">${email}</a></p>
                 <p class="office">Office Number: ${officeNumber}</p>
@@ -25,12 +25,12 @@ const EngineerCard = function(engineer) {
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="cardTitle">
                 <h1>${name}</h1>
                 <h2>Engineer</h2><span class='material-symbols-outlined'>diversity_1</span>
 
             </div>
-            <div class="card-body">
+            <div class="bodyOfCard">
                 <p class="id">ID: ${id}</p>
                 <p class="email">Email: <a href="mailto:${email}">${email}</a></p>
                 <p class="github">Github: <a href="https://github.com/${github}">${github}</a></p>
@@ -46,12 +46,12 @@ const InternCard = function(intern) {
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="cardTitle">
                 <h1>${name}</h1>
                 <h2>Intern</h2><span class='material-symbols-outlined'>supervisor_account</span>
 
             </div>
-            <div class="card-body">
+            <div class="bodyOfCard">
                 <p class="id">ID: ${id}</p>
                 <p class="email">Email:<a href="mailto:${email}">${email}</a></p>
                 <p class="school">School: ${school}</p>
@@ -105,7 +105,7 @@ const createTeamPage = function(teamCards) {
   </head>
   <body>
       <header>
-          <nav class="navbar" id="navbar">
+          <nav class="navbar" id="nav">
               <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Amazing Team Profile</span>
           </nav>
       </header>

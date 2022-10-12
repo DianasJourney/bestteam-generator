@@ -10,7 +10,7 @@ body {
     background-size: cover;
 }
 
-#navbar {
+#nav {
     background-image: url(./headergif.gif);
     color: rgb(255, 255, 255);
     font-size: 35px;
@@ -22,8 +22,7 @@ body {
     font-size: 40px;
 }
 
-
-.card-header {
+.cardTitle {
     background-color: white;
     color: rgb(42, 42, 43);
     font-family: 'Peralta', cursive;
@@ -33,7 +32,7 @@ body {
     
 }
 
-.card-body {
+.bodyOfCard {
     background-color: rgb(178, 210, 238);
     color: rgb(0, 0, 0);
     font-size: 21px;
