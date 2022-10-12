@@ -28,7 +28,7 @@ For testing purposes to make sure the application works, jest was added into the
 ![d309da6f237eb91d679fd8eeb4010b1b](https://user-images.githubusercontent.com/109758045/195432747-c56e0b13-c03d-4387-b15b-694c0ca53ac4.png)
 
 
-[Best Team Gen Demo.webm](https://user-images.githubusercontent.com/109758045/195432549-8b79a2a5-0d1e-4e3c-89db-12909d8e26c1.webm)
+[Best Team Gen Demo.webm](https://user-images.githubusercontent.com/109758045/195434455-a8cbb28a-ac57-41bd-bbde-8fa32c75087c.webm)
 
 
 ## UserStory
