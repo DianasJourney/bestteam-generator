@@ -13,7 +13,3 @@ it('gets role of the intern', () => {
   expect(intern.getRole()).toEqual('Intern');
 })
 });
-
-
-
-
