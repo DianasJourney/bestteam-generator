@@ -1,17 +1,18 @@
 // manager profile
 const ManagerCard = function(manager) {
+    const {name, id, email, officeNumber} = manager;
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
-                <h1>${manager.name}</h1>
+                <h1>${name}</h1>
                 <h2>Manager</h2><span class='material-symbols-outlined'>account_circle</span>
 
             </div>
             <div class="card-body">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number: ${manager.officeNumber}</p>
+                <p class="id">ID: ${id}</p>
+                <p class="email">Email: <a href="mailto:${email}">${email}</a></p>
+                <p class="office">Office Number: ${officeNumber}</p>
             </div>
         </div>
     </section>
@@ -20,18 +21,19 @@ const ManagerCard = function(manager) {
 
 // engineer profile
 const EngineerCard = function(engineer) {
+    const {name, id, email, github} = engineer;
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
-                <h1>${engineer.name}</h1>
+                <h1>${name}</h1>
                 <h2>Engineer</h2><span class='material-symbols-outlined'>diversity_1</span>
 
             </div>
             <div class="card-body">
-                <p class="id">ID: ${engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+                <p class="id">ID: ${id}</p>
+                <p class="email">Email: <a href="mailto:${email}">${email}</a></p>
+                <p class="github">Github: <a href="https://github.com/${github}">${github}</a></p>
             </div>
         </div>
     </section>
@@ -39,19 +41,20 @@ const EngineerCard = function(engineer) {
 }
 
 // intern profile
-const InternCard = function (intern) {
+const InternCard = function(intern) {
+    const {name, id, email, school} = intern;
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
-                <h1>${intern.name}</h1>
+                <h1>${name}</h1>
                 <h2>Intern</h2><span class='material-symbols-outlined'>supervisor_account</span>
 
             </div>
             <div class="card-body">
-                <p class="id">ID: ${intern.id}</p>
-                <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
-                <p class="school">School: ${intern.school}</p>
+                <p class="id">ID: ${id}</p>
+                <p class="email">Email:<a href="mailto:${email}">${email}</a></p>
+                <p class="school">School: ${school}</p>
             </div>
     </div>
 </section>
