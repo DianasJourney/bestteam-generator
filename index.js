@@ -47,7 +47,7 @@ const addEmployee = () => {
     teamArray.push(employee)
 
     if (confirmAddEmployee) {
-      return addEmployee(teamArray)
+      return addEmployee()
     }
 
     return teamArray
