@@ -1,11 +1,11 @@
 // manager profile
-const createManager = function (manager) {
+const ManagerCard = function(manager) {
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
-                <h3>${manager.name}</h3>
-                <h4>Manager</h4><span class='material-symbols-outlined'>account_circle</span>
+                <h1>${manager.name}</h1>
+                <h2>Manager</h2><span class='material-symbols-outlined'>account_circle</span>
 
             </div>
             <div class="card-body">
@@ -19,13 +19,13 @@ const createManager = function (manager) {
 }
 
 // engineer profile
-const createEngineer = function (engineer) {
+const EngineerCard = function(engineer) {
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
-                <h3>${engineer.name}</h3>
-                <h4>Engineer</h4><span class='material-symbols-outlined'>diversity_1</span>
+                <h1>${engineer.name}</h1>
+                <h2>Engineer</h2><span class='material-symbols-outlined'>diversity_1</span>
 
             </div>
             <div class="card-body">
@@ -39,13 +39,13 @@ const createEngineer = function (engineer) {
 }
 
 // intern profile
-const createIntern = function (intern) {
+const InternCard = function (intern) {
   return `
     <section class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
-                <h3>${intern.name}</h3>
-                <h4>Intern</h4><span class='material-symbols-outlined'>supervisor_account</span>
+                <h1>${intern.name}</h1>
+                <h2>Intern</h2><span class='material-symbols-outlined'>supervisor_account</span>
 
             </div>
             <div class="card-body">
@@ -58,36 +58,35 @@ const createIntern = function (intern) {
     `
 }
 
-createHTML = data => {
-  pageArray = []
+displayTeamPage = data => {
+  const cardArray = []
 
   for (let i = 0; i < data.length; i++) {
-    const employee = data[i]
-    const role = employee.getRole()
+    let team = data[i]
+    let role = team.getRole()
 
     if (role === 'Manager') {
-      const managerCard = createManager(employee)
-      pageArray.push(managerCard)
+      const managerCard = ManagerCard(team)
+      cardArray.push(managerCard)
     }
 
-    if (role === 'Engineer') {
-      const engineerCard = createEngineer(employee)
-      pageArray.push(engineerCard)
+    else if (role === 'Engineer') {
+      const engineerCard = EngineerCard(team)
+      cardArray.push(engineerCard)
     }
 
-    if (role === 'Intern') {
-      const internCard = createIntern(employee)
-      pageArray.push(internCard)
+    else if (role === 'Intern') {
+      const internCard = InternCard(team)
+      cardArray.push(internCard)
     }
   }
 
-  const employeeCards = pageArray.join('')
+  const teamCards = cardArray.join('')
 
-  const createTeam = createTeamPage(employeeCards)
-  return createTeam
+  return createTeamPage(teamCards)
 }
 
-const createTeamPage = function (employeeCards) {
+const createTeamPage = function(teamCards) {
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -111,7 +110,7 @@ const createTeamPage = function (employeeCards) {
           <section class="container">
               <div class="row justify-content-center" id="team-cards">
                   <!--Cards for each profile created-->
-                  ${employeeCards}
+                  ${teamCards}
               </div>
           </section>
       </main>
@@ -121,4 +120,5 @@ const createTeamPage = function (employeeCards) {
 `
 }
 
-module.exports = createHTML
+module.exports = displayTeamPage
+
