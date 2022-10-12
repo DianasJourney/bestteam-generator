@@ -45,11 +45,10 @@ const addEmployee = () => {
         : new Intern(name, id, email, school);
 
     teamArray.push(employee);
-
+// confirms if users want to add more employees, then it will call the addemployee function if not it will create the team.
     if (confirmAddEmployee) {
       return addEmployee();
     }
-
     return teamArray;
   })
 }

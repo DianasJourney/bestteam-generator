@@ -18,7 +18,6 @@ const ManagerCard = function(manager) {
     </section>
     `
 }
-
 // engineer profile
 const EngineerCard = function(engineer) {
     const {name, id, email, github} = engineer;
@@ -39,7 +38,6 @@ const EngineerCard = function(engineer) {
     </section>
     `
 }
-
 // intern profile
 const InternCard = function(intern) {
     const {name, id, email, school} = intern;
@@ -88,7 +86,7 @@ displayTeamPage = data => {
 
   return createTeamPage(teamCards)
 }
-
+// this creates the teampage with all the info passed in
 const createTeamPage = function(teamCards) {
   return `
   <!DOCTYPE html>
@@ -122,6 +120,6 @@ const createTeamPage = function(teamCards) {
   </html>
 `
 }
-
+//exports and displays the team page
 module.exports = displayTeamPage
 

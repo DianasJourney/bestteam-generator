@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Courgette', cursive;
     background-image: url(./workbg.jpg);
@@ -46,7 +45,7 @@ body {
     display: flex;
 }
 
-.card-body:hover {
+.bodyOfCard:hover {
     background-color: rgb(110, 135, 152);
     transition-timing-function: ease-in-out;
     transition: 1.5s;
