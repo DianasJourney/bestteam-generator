@@ -1,31 +1,31 @@
-const HTML = require('./src/html')
+const HTML = require('./src/html');
 
 // node modules
-const fs = require('fs')
-const inquirer = require('inquirer')
+const fs = require('fs');
+const inquirer = require('inquirer');
 // team library
-const Manager = require('./lib/Manager')
-const Engineer = require('./lib/Engineer')
-const Intern = require('./lib/Intern')
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
-const { managerChoices, employeeChoices } = require('./lib/static')
+const { managerChoices, employeeChoices } = require('./lib/static');
 
-const teamArray = []
+const teamArray = [];
 // manager prompt
 const addManager = () => {
   return inquirer.prompt(managerChoices).then(managerInput => {
-    const { name, id, email, officeNumber } = managerInput
-    const manager = new Manager(name, id, email, officeNumber)
+    const { name, id, email, officeNumber } = managerInput;
+    const manager = new Manager(name, id, email, officeNumber);
 
-    teamArray.push(manager)
+    teamArray.push(manager);
   })
 }
 //adds employees
 const addEmployee = () => {
   console.log(`
-    =================
-    Adding employees to the team
-    =================
+    ----------------
+    Add employees!
+    ----------------
     `)
 
   return inquirer.prompt(employeeChoices).then(employeeData => {
@@ -42,15 +42,15 @@ const addEmployee = () => {
     let employee =
       role === 'Engineer'
         ? new Engineer(name, id, email, github)
-        : new Intern(name, id, email, school)
+        : new Intern(name, id, email, school);
 
-    teamArray.push(employee)
+    teamArray.push(employee);
 
     if (confirmAddEmployee) {
-      return addEmployee()
+      return addEmployee();
     }
 
-    return teamArray
+    return teamArray;
   })
 }
 
@@ -60,18 +60,18 @@ const writeFile = data => {
     // throws out an error if it catches one
     if (err) {
       console.log(err)
-      return
+      return;
       // success, html is created
     } else {
       console.log(
         'Success! Your team has been generated, open up the HTML to check it out.'
-      )
+      );
     }
   })
-}
+};
 
 addManager()
   .then(addEmployee)
   .then(teamArray => HTML(teamArray))
   .then(pageHTML => writeFile(pageHTML))
-  .catch(err => console.log(err))
+  .catch(err => console.log(err));
